@@ -43,8 +43,8 @@ function Contacts() {
                 <th scope="col">Name</th>
                 <th scope="col">Last name</th>
                 <th scope="col">Phone</th>
-                <th scope="col">Actions</th>
                 <th scope="col">Img </th>
+                <th scope="col">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -69,7 +69,7 @@ function Contacts() {
                       </td>
                       <td
                         onClick={() => deleteContact(item._id)}
-                        className="btn btn-outline-danger mx-2 my-1"
+                        className="btn btn-outline-danger mx-2 my-1 "
                       >
                         delete
                       </td>
