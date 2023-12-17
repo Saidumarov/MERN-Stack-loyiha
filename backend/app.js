@@ -20,6 +20,7 @@ const contactSchema = {
   name: String,
   user: String,
   number: Number,
+  img: String,
 };
 
 // data model
@@ -38,6 +39,7 @@ app.post("/newContact", (req, res) => {
     name: req.body.name,
     user: req.body.user,
     number: req.body.number,
+    img: req.body.img,
   });
   newContact
     .save()
@@ -68,6 +70,7 @@ app.put("/put/:id", async (req, res) => {
     name: req.body.name,
     user: req.body.user,
     number: req.body.number,
+    img: req.body.img,
   };
   const id = req.params.id;
 
