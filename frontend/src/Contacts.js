@@ -55,9 +55,17 @@ function Contacts() {
                       <th scope="row">{index + 1}</th>
                       <td>{item.name}</td>
                       <td>{item.user}</td>
-                      <td>{item.number}</td>
+                      <td>+{item.number}</td>
                       <td className="img">
-                        <img src={item.img} alt="Note not found" />
+                        <img
+                          src={item.img}
+                          alt="Note not found"
+                          onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src =
+                              "https://img.freepik.com/premium-vector/error-404-found-glitch-effect_8024-4.jpg";
+                          }}
+                        />
                       </td>
                       <td
                         onClick={() => deleteContact(item._id)}
