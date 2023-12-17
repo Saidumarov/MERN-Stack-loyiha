@@ -18,7 +18,55 @@ code {
   width: 1000px;
   margin: 0 auto;
   margin-top: 50px;
+  margin-bottom: 150px;
+  position: relative;
 }
 .tablee div {
   width: 78%;
+}
+
+.img {
+  width: 100px;
+  height: 100px;
+}
+.img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.loading {
+  width: 100%;
+  height: 150px;
+  position: absolute;
+  left: 200px;
+}
+
+.loading-item {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(245, 245, 245);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.loading-item div {
+  width: 60px;
+  height: 150%;
+  background-color: rgba(232, 232, 232, 0.941);
+  transform: rotate(10deg);
+  left: -50px;
+  top: -10px;
+  position: absolute;
+  animation: loading 1s linear infinite;
+  filter: blur(15px);
+}
+
+@keyframes loading {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
 }

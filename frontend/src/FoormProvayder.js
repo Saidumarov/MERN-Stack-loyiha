@@ -6,11 +6,14 @@ function FoormProvayder({ children }) {
     name: "",
     user: "",
     number: "",
+    img: "",
     id: "",
   });
   return (
     <div>
-      <Foorm.Provider value={{ isupdate, setIsUpdate, updateContact, setUpdateContact }} >
+      <Foorm.Provider
+        value={{ isupdate, setIsUpdate, updateContact, setUpdateContact }}
+      >
         {children}
       </Foorm.Provider>
     </div>

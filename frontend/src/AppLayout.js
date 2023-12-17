@@ -14,6 +14,7 @@ function AppLayout() {
     name: "",
     user: "",
     number: "",
+    img: "",
   });
 
   const updateContactHander = (id) => {
@@ -37,14 +38,15 @@ function AppLayout() {
 
   const submithandler = (e) => {
     e.preventDefault();
-    const { name, number, user } = contact;
-    const newContact = { name, number, user };
+    const { name, number, user, img } = contact;
+    const newContact = { name, number, user, img };
     axios.post("/newContact", newContact);
     toast.success("Contact added");
     setContact({
       name: "",
       user: "",
       number: "",
+      img: "",
     });
   };
 
@@ -102,8 +104,23 @@ function AppLayout() {
               className="form-control"
             />
           </div>
+          <div className="mb-3">
+            <label htmlFor="img" className="form-label">
+              Enter your img
+            </label>
+            <input
+              id="img"
+              onChange={handelchange}
+              name="img"
+              type="img"
+              value={contact.img}
+              className="form-control"
+            />
+          </div>
           <button
-            disabled={!contact.name || !contact.user || !contact.number}
+            disabled={
+              !contact.name || !contact.user || !contact.number || !contact.img
+            }
             onClick={submithandler}
             className="btn btn-primary mt-4"
           >
@@ -151,13 +168,27 @@ function AppLayout() {
               className="form-control"
             />
           </div>
+          <div className="mb-3">
+            <label htmlFor="img" className="form-label">
+              Enter your img
+            </label>
+            <input
+              id="img"
+              onChange={handelUpdate}
+              name="img"
+              type="img"
+              value={updateContact.img}
+              className="form-control"
+            />
+          </div>
           <button
             onClick={() => updateContactHander(updateContact.id)}
             className="btn btn-primary mt-4"
             disabled={
               !updateContact.name ||
               !updateContact.user ||
-              !updateContact.number
+              !updateContact.number ||
+              !updateContact.img
             }
           >
             Change
